@@ -2,7 +2,7 @@
 import requests
 class basis_requests():
     def __init__(self,url=None,form=None,header=None,**kwargs):
-        # self.url = url
+        self.url = url
         self.form = form
         self.header = header
         self.key = kwargs['key']
