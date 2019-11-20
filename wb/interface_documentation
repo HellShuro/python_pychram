@@ -1,0 +1,25 @@
+{
+  "Zhuxian_Online": {
+
+  },
+  "Zhuxian_Test": {
+    "Domain_name": "http://188.188.1.202:20006",
+    "interface":{
+      "XuanShouBang": {
+        "url": "/chess//league/user/getUserRankList",
+        "form": {
+          "dateTime":"0",
+          "leagueId":"48",
+          "pageIndex":"1",
+          "pageSize":"30"
+        }
+      }
+    }
+  },
+  "Biglianmeng_Online": {
+
+  },
+  "Biglianmeng_Test": {
+
+  }
+}
