@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import sys
 from PyQt5.QtWidgets import QApplication,QMainWindow, QWidget, QToolTip, QPushButton,QMessageBox,QDesktopWidget,QHBoxLayout,QVBoxLayout,QTextEdit,QLineEdit,QGridLayout,QLabel,QLCDNumber,QSlider
-
+import json
 from PyQt5.QtGui import QIcon,QFont
 from PyQt5.QtCore import QCoreApplication,Qt
 
@@ -48,11 +48,19 @@ class raw_json(QWidget):
         # 获取行输入的内容
         sender = self.raw_edit.text()
 
+        data = sender.split("&")[0:-1]
+        print(data[0:-1])
 
+        json_out = {}
 
+        for i in data:
+            j = i.split('=')[0]
+            k = i.split('=')[1]
+            json_out[j] = k
+        print(json_out)
 
         # 输出变更内容到textedit
-        self.json_out.setPlainText(sender)
+        self.json_out.setPlainText(json.dumps(json_out))
 
         self.show()
 
