@@ -3,12 +3,10 @@ import sys
 from PyQt5.QtWidgets import QApplication,QMainWindow, QWidget, QToolTip, QPushButton,QMessageBox,QDesktopWidget,QHBoxLayout,QVBoxLayout,QTextEdit,QLineEdit,QGridLayout,QLabel,QLCDNumber,QSlider
 import json
 from PyQt5.QtGui import QIcon,QFont
-from PyQt5.QtCore import QCoreApplication,Qt
 
 class raw_json(QWidget):
     def __init__(self):
         super().__init__()
-
         self.UI_raw_json()
 
     def UI_raw_json(self):
@@ -57,7 +55,6 @@ class raw_json(QWidget):
             j = i.split('=')[0]
             k = i.split('=')[1]
             json_out[j] = k
-        print(json_out)
 
         # 输出变更内容到textedit
         self.json_out.setPlainText(json.dumps(json_out))

@@ -5,14 +5,425 @@
   "Zhuxian_Test": {
     "Domain_name": "http://188.188.1.202:20006",
     "interface":{
-      "XuanShouBang": {
-        "url": "/chess//league/user/getUserRankList",
-        "form": {
-          "dateTime":"0",
-          "leagueId":"48",
-          "pageIndex":"1",
-          "pageSize":"30"
+      "LianSai": {
+        "openLiansai": {
+          "url": "/chess//league/manage/turnOn",
+          "form": {
+            "clubId": "1424"
+          }
+        },
+        "XuanShouBang": {
+          "url": "/chess//league/user/getUserRankList",
+          "form": {
+            "dateTime":"0",
+            "leagueId":"48",
+            "pageIndex":"1",
+            "pageSize":"30"
+          }
+        },
+        "xuanshouBang_search": {
+          "url": "/chess//league/user/searchUserRank",
+          "form": {
+            "dateTime": "0",
+            "leagueId": "132",
+            "nickName": "ad "
+          }
+        },
+        "teamRankList": {
+          "url": "/chess//league/team/getTeamRankList",
+          "form": {
+            "dateTime": "0",
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "lianduiRank_List": {
+          "url": "/chess//league/united/getUnitedRankList",
+          "form": {
+            "dateTime": "0",
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "setMatchReward": {
+          "url": "/chess//league/manage/getMatchRewardRecord",
+          "form": {
+            "leagueId": "132",
+            "rewardType": "2"
+          }
+        },
+
+        "注释0": "以下为联赛管理中的我的队员/小队管理/联队管理",
+
+        "United_MyTeamPeople_List": {
+          "url": "/chess//league/user/list",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "United_MyTeamPeople_search": {
+          "url": "/chess//league/user/list",
+          "form": {
+            "leagueId": "132",
+            "keyWord": "132"
+          }
+        },
+        "MyTeamPeopleList_statistic": {
+          "url": "/chess//league/user/statisByDate",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "MyTeamPeopleList_statistic_search": {
+          "url": "/chess//league/user/statisByDate",
+          "form": {
+            "leagueId": "132",
+            "beforeDays": "-1",
+            "keyWord": "132"
+          }
+        },
+        "ChuSai_Set_TaoTaiRank": {
+          "url": "/chess//league/manage/selectMatchOutConfig",
+          "form": {
+            "leagueId": "132",
+            "scoreType": "0"
+          }
+        },
+        "Set_TaoTaiRank": {
+          "url": {
+            "playMatch": "/chess//league/user/playMatch",
+            "list": "/chess//league/user/list",
+            "getClubExtendInfo": "/chess//club/clubInfo/getClubExtendInfo"
+          },
+          "form": {
+            "playMatch": {
+              "leagueId": "132",
+              "clubId": "1424",
+              "matchOutScoreIds": "2154",
+              "userIds": "171141"
+            },
+            "list": {
+              "leagueId": "132",
+              "pageIndex": "1",
+              "pageSize": "30"
+            },
+            "getClubExtendInfo": {
+              "groupId": "607792"
+            }
+          }
+        },
+        "reMatch": {
+          "url": {
+            "rematch": "/chess//league/user/rematch",
+            "list": "/chess//league/user/list",
+            "getClubExtendInfo": "/chess//club/clubInfo/getClubExtendInfo"
+          },
+          "form": {
+            "rematch":{
+              "clubId": "1424",
+              "leagueId": "132",
+              "userIds": "171141"
+            },
+            "list": {
+              "leagueId": "132",
+              "pageIndex": "1",
+              "pageSize": "30"
+            },
+            "getClubExtendInfo": {
+              "groupId": "607792"
+            }
+          }
+        },
+        "updateForbidStatus": {
+          "url": "/chess//league/user/updateForbidStatus",
+          "form": {
+            "clubId": "1424",
+            "leagueId": "132",
+            "userIds": "171141",
+            "userStatus": "1"
+          }
+        },
+
+        "LianSaiGuanLi_teamList": {
+          "url": "/chess//league/team/list",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "team_list": {
+          "url": "/chess//league/team/list",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "team_list_serach": {
+          "url": "/chess//league/team/statisByDate",
+          "form": {
+            "leagueId": "132",
+            "beforeDays": "0",
+            "keyWord": "1"
+          }
+        },
+        "updateLevel": {
+          "url": "/chess//league/team/updateLevel",
+          "form": {
+            "leagueId": "132",
+            "clubId": "1424",
+            "teamIds": "367",
+            "teamLevel": "13"
+          }
+        },
+        "team_statistic": {
+          "url": "/chess//league/team/statisByDate",
+          "form": {
+            "leagueId": "132",
+            "beforeDays": "0",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "team_statistic_search": {
+          "url": "/chess//league/team/statisByDate",
+          "form": {
+            "leagueId": "132",
+            "beforeDays": "0",
+            "keyWord": "1"
+          }
+        },
+        "getLeagueTeamMatchs": {
+          "url": "/chess//league/team/getLeagueTeamMatchs",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30",
+            "teamId": "367"
+          }
+        },
+        "getLeagueTeamRecordLogs": {
+          "url": "/chess//league/team/getLeagueTeamRecordLogs",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30",
+            "teamId": "367",
+            "beforeDays": "0",
+            "floorId": "0"
+          }
+        },
+        "selectLeagueTeamLvLogsByPage": {
+          "url": "/chess//league/team/selectLeagueTeamLvLogsByPage",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30",
+            "teamId": "367"
+          }
+        },
+        "team_selectLeagueUnitedLvLogsByPage": {
+          "url": "/chess//league/team/selectLeagueUnitedLvLogsByPage",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30",
+            "teamId": "367"
+          }
+        },
+
+        "LianSaiGuanLi_unitedList": {
+          "url": "/chess//league/united/list",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "unitedList_playMatch": {
+          "url": "/chess//league/united/playMatch",
+          "form": {
+            "leagueId": "132",
+            "clubId": "1424",
+            "matchOutScoreIds": "2159",
+            "unitedIds": "100149"
+          }
+        },
+        "unitedList_rematch": {
+          "url": "/chess//league/united/rematch",
+          "form": {
+            "leagueId": "132",
+            "clubId": "1424",
+            "unitedIds": "100149"
+          }
+        },
+        "unitedList_updateForbidStatus": {
+          "url": "/chess//league/united/updateForbidStatus",
+          "form": {
+            "leagueId": "132",
+            "clubId": "1424",
+            "unitedIds": "100149",
+            "unitedStatus": "1"
+          }
+        },
+        "unitedList_updateLevel": {
+          "url": "/chess//league/united/updateLevel",
+          "form": {
+            "leagueId": "132",
+            "clubId": "1424",
+            "unitedIds": "100149",
+            "unitedLevel": "1"
+          }
+        },
+        "united_statistic": {
+          "url": "/chess//league/united/statisByDate",
+          "form": {
+            "leagueId": "132",
+            "beforeDays": "0",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "getLeagueUnitedMatchs": {
+          "url": "/chess//league/united/getLeagueUnitedMatchs",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30",
+            "unitedId": "100149"
+          }
+        },
+        "getLeagueUnitedRecordLogs": {
+          "url": "/chess//league/united/getLeagueUnitedRecordLogs",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30",
+            "unitedId": "100149",
+            "beforeDays": "0",
+            "floorId": "0"
+          }
+        },
+
+        "注释1": "以下为联赛管理中的赛事管理",
+
+        "selectLeagueMatchConfig": {
+          "url": "/chess//league/manage/selectLeagueMatchConfig",
+          "form": {
+            "leagueId": "132"
+          }
+        },
+        "updateMatchReSetTime": {
+          "url": "/chess//league/manage/updateMatchReSetTime",
+          "form": {
+            "leagueId": "132",
+            "hourStr": "20"
+          }
+        },
+        "selectMatchOutConfig": {
+          "url": "/chess//league/manage/selectMatchOutConfig",
+          "form": {
+            "leagueId": "132",
+            "scoreType": "0"
+          }
+        },
+        "updateOutScoreSetting": {
+          "url": "/chess//league/manage/updateOutScoreSetting",
+          "form": {
+            "leagueId": "132",
+            "scoreType": "0",
+            "floorId": "1",
+            "outScore": "-100"
+          }
+        },
+        "updateMatchOutConfig": {
+          "url": "/chess//league/manage/updateMatchOutConfig",
+          "form": {
+            "leagueId": "132",
+            "playOutFloor": "0",
+            "playerOutCount": "5",
+            "teamOutCount": "-1",
+            "teamOutFloor": "0"
+          }
+        },
+        "updateMatchRankRule": {
+          "url": "/chess//league/manage/updateMatchRankRule",
+          "form": {
+            "leagueId": "132",
+            "playerRanking": "2",
+            "teamRanking": "2"
+          }
+        },
+        "closeOrOpenMatch": {
+          "url": "/chess//league/manage/closeOrOpenMatch",
+          "form": {
+            "leagueId": "132",
+            "matchStatus": "2"
+          }
+        },
+        "united_selectLeagueUnitedLvLogsByPage": {
+          "url": "/chess//league/united/selectLeagueUnitedLvLogsByPage",
+          "form": {
+            "leagueId": "132",
+            "pageIndex": "1",
+            "pageSize": "30",
+            "unitedId": "100149"
+          }
+        },
+
+        "注释2": "我的比赛",
+
+        "selectLeagueUserMatchLogInfoByPage": {
+          "url": "/chess//league/user/selectLeagueUserMatchLogInfoByPage",
+          "form": {
+            "leagueId": "132",
+            "userId": "171141",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "selectLeagueUserScoreInfo": {
+          "url": "/chess//league/user/selectLeagueUserScoreInfo",
+          "form": {
+            "leagueId": "132",
+            "userId": "171141"
+          }
+        },
+
+        "selectUserRecordTotal": {
+          "url": "/chess//league/user/selectUserRecordTotal",
+          "form":{
+            "leagueId": "132",
+            "userId": "171141",
+            "queryDate": "0"
+          }
+        },
+        "selectLeagueUserRecord": {
+          "url": "/chess//league/user/selectLeagueUserRecord",
+          "form": {
+            "leagueId": "132",
+            "userId": "171141",
+            "queryDate": "0",
+            "floorId": "0",
+            "pageIndex": "1",
+            "pageSize": "30"
+          }
+        },
+        "updateLightenUp": {
+          "url": "/chess//league/user/updateLightenUp",
+          "form": {
+            "recordId": "391",
+            "recordType": "2"
+          }
         }
+
       }
     }
   },
