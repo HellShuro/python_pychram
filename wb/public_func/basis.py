@@ -5,7 +5,7 @@ class basis_requests():
         self.url = url
         self.form = form
         self.header = header
-        self.key = kwargs['key']
+        # self.key = kwargs['key']
         print("发起请求: {}".format(self.url))
 
     # get请求

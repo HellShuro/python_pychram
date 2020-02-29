@@ -1,12 +1,12 @@
 # -*- coding: UTF-8 -*-
 from socket import *
 from wb.public_func.basis import basis_requests
-from time import ctime
 import json
-import requests
+
+
 class Local_TCP():
     def __init__(self):
-        self.host = "188.188.3.128"
+        self.host = "188.188.1.135"
         self.port = 9004
         self.buffsize = 20480
         self.ADDR = (self.host,self.port)
@@ -28,8 +28,6 @@ class Local_TCP():
 
             data = req_client.recv(self.buffsize).decode("utf-8")
 
-            # data = self.recv_basic(req_client)
-
             print(data)
             arr = str(data).split('\n')
             data_list = []
@@ -38,13 +36,28 @@ class Local_TCP():
                 key_value = i.split(':')
                 data_list.append(key_value)
             self.extrack_url(data_list)
-            self.extract_head(data_list)
+            self.head = self.validation_head(data_list)
+            content_length = self.validation_head(data,search="content_length")
             self.extrack_form(data_list)
+
             print("==============")
             print(self.form)
             print(self.head)
             print(self.url)
+            print("%%%")
+            print(content_length)
+            print(len(self.form))
             print("============")
+
+            if content_length != len(self.form):
+                data1 = []
+                req_client, req_addr = self.tcptime.accept()
+                print("[{}][{}]用户单次传输，第二次获取数据".format(req_client, req_addr))
+                data1 = req_client.recv(self.buffsize).decode("utf-8")
+                print(data1)
+                self.extrack_form(data1)
+                print("第二次获取的数据解析后form显示：{}".format(self.form))
+
 
             url = "http://dailiintest01.szwbkj.cn/{}".format(self.url)
 
@@ -77,17 +90,6 @@ class Local_TCP():
 
             req_client.close()
 
-    def recv_basic(self, the_socket):
-        total_data = []
-        print("++123456789")
-        while True:
-            data = the_socket.recv(20480)
-            if not data: break
-            total_data.append(data)
-            print("===>{}".format(total_data))
-        print(total_data)
-        return ''.join(total_data)
-
     def extrack_url(self, data):
         try:
             http_connect = data[0][0].split(" ")
@@ -96,17 +98,16 @@ class Local_TCP():
             pass
         return self.url
 
-    def extract_head(self, data):
+    def validation_head(self, data, search="UserKey"):
         for i in data:
             try:
-                k = i[0].replace(" ","")
-                v = i[1].replace(" ","")
-                if i[0] == "UserKey" :
-                    self.head[k] = v
+                k = i[0].replace(" ", "")
+                v = i[1].replace(" ", "")
+                if i[0] == search:
+                    value = i[0]
+                    return value
             except:
                 pass
-
-        return self.head
 
     def extrack_form(self, data):
         try:
@@ -116,6 +117,7 @@ class Local_TCP():
                 j = i.split('=')[0]
                 k = i.split('=')[1]
                 self.form[j] = k
+
         except:
             pass
         return self.form
