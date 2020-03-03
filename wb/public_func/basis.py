@@ -29,19 +29,22 @@ class basis_requests():
     # 需要提供url,form ,heander
     # 存在302响应问题
     def basis_post(self):
-        r = requests.post(url = self.url,data=self.form,headers = self.header)
-        r.encoding = 'utf-8'
-        if r.status_code == 200 or r.status_code == 302 :
-            try:
-                print("json")
-                response = r.json()
-                return response
-            except:
-                print("text")
-                response = r.text
-                return response
+        print("***********************")
+        print(self.url)
+        print(self.form)
+        print(self.header)
+        res = requests.post(url=self.url, data=self.form, headers=self.header)
+        print(res)
+        res.encoding = 'utf-8'
+        print("***********************")
+        print(res.headers)
+        print(res.content)
+        print("***********************")
+
+        if res.status_code == 200 or res.status_code == 302:
+            return res
         else:
-            print('请求失败 : {}'.format(r.status_code))
+            print('请求失败 : {}'.format(res.status_code))
 
 if __name__ == '__main__':
     a = basis_requests()
